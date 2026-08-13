@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-seo-title>PDF Tool — PDF Tools Hub</title>
+<meta name="description" data-seo-description content="Free online PDF tool.">
+<link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/vendor/fontawesome/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to content</a>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="brand" aria-label="PDF Tools Hub home">
+      <span class="brand-mark">P</span>
+      <span class="brand-text">
+        <span class="brand-name">PDF Tools Hub</span>
+        <span class="brand-tagline">All-in-One PDF Tools</span>
+      </span>
+    </a>
+    <nav class="main-nav" aria-label="Primary">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="tool.html?tool=crop-pdf">Crop PDF</a></li>
+        <li><a href="tool.html?tool=merge-pdf">Merge PDF</a></li>
+        <li><a href="blogs.html">Blogs</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <a class="icon-btn" href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      <a class="icon-btn" href="https://wa.me/" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+      <a class="icon-btn" href="https://t.me/" target="_blank" rel="noopener" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
+      <button class="icon-btn theme-toggle" data-theme-toggle aria-label="Toggle dark mode">
+        <i class="fa-solid fa-moon icon-moon"></i><i class="fa-solid fa-sun icon-sun"></i>
+      </button>
+      <select class="lang-select" data-lang-select aria-label="Select language">
+        <option value="en">🇬🇧 EN</option><option value="hi">🇮🇳 HI</option><option value="mr">🇮🇳 MR</option>
+      </select>
+      <button class="hamburger" data-mobile-nav-open aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-nav" data-mobile-nav aria-hidden="true">
+  <div class="mobile-nav-panel">
+    <button class="mobile-nav-close" data-mobile-nav-close aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
+    <div style="display:flex;align-items:center;gap:10px;margin:6px 0 18px;">
+      <button class="icon-btn theme-toggle" data-theme-toggle aria-label="Toggle dark mode"><i class="fa-solid fa-moon icon-moon"></i><i class="fa-solid fa-sun icon-sun"></i></button>
+      <select class="lang-select" data-lang-select aria-label="Select language"><option value="en">EN</option><option value="hi">HI</option><option value="mr">MR</option></select>
+    </div>
+    <nav aria-label="Mobile primary">
+      <a href="index.html">Home</a>
+      <a href="tool.html?tool=crop-pdf">Crop PDF</a>
+      <a href="tool.html?tool=merge-pdf">Merge PDF</a>
+      <a href="blogs.html">Blogs</a>
+      <a href="contact.html">Contact Us</a>
+    </nav>
+  </div>
+</div>
+
+<main id="main">
+  <div class="container" style="padding-top:32px; max-width:840px;">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a><span class="sep">/</span><span data-breadcrumb-category>Tools</span><span class="sep">/</span><span data-breadcrumb-tool>Tool</span>
+    </nav>
+
+    <div class="tool-hero">
+      <div class="tool-icon" data-tool-icon></div>
+      <div>
+        <h1 data-tool-title>Loading tool…</h1>
+        <p data-tool-description></p>
+      </div>
+    </div>
+
+    <!-- Upload state -->
+    <div data-upload-state>
+      <div class="dropzone" data-dropzone tabindex="0" role="button" aria-label="Upload files">
+        <div class="dz-icon"><i class="fa-solid fa-cloud-arrow-up"></i></div>
+        <h3>Drag &amp; drop your files</h3>
+        <p>or click to browse from your device</p>
+        <div class="dz-or">OR</div>
+        <span class="btn btn-outline"><i class="fa-solid fa-folder-open"></i> Choose Files</span>
+        <input type="file" data-file-input accept=".pdf" multiple>
+      </div>
+
+      <div class="file-list" data-file-list></div>
+
+      <div data-tool-options></div>
+
+      <div class="progress-bar" data-progress-bar><div class="fill" data-progress-fill></div></div>
+
+      <div class="tool-actions">
+        <button class="btn btn-primary" data-process-btn disabled>
+          <i class="fa-solid fa-gears"></i> <span data-process-label>Process File</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Result state -->
+    <div class="result-panel" data-result-panel>
+      <div class="result-icon"><i class="fa-solid fa-check"></i></div>
+      <h3>Your file is ready</h3>
+      <p>Processing finished successfully. Download it below.</p>
+      <div class="tool-actions" style="justify-content:center">
+        <a class="btn btn-primary" data-download-btn href="#" download><i class="fa-solid fa-download"></i> Download PDF</a>
+        <button class="btn btn-outline" data-reset-btn><i class="fa-solid fa-rotate-left"></i> Process Another File</button>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-bottom">© 2026 PDF Tools Hub. All rights reserved.</div>
+  </div>
+</footer>
+
+<script src="js/theme.js"></script>
+<script src="js/api.js"></script>
+<script src="js/tools.js"></script>
+<script src="js/upload.js"></script>
+<script src="js/main.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const params = new URLSearchParams(window.location.search);
+  const slug = params.get('tool');
+  const tool = window.PTH.tools.getToolBySlug(slug);
+
+  if (!tool) {
+    document.querySelector('main .container').innerHTML = `
+      <div class="empty-state">
+        <div class="icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+        <h3>Tool not found</h3>
+        <p>That tool doesn't exist yet. <a href="index.html">Browse all tools</a></p>
+      </div>`;
+    return;
+  }
+
+  const cat = window.PTH.tools.getCategoryBySlug(tool.categorySlug);
+
+  document.title = `${tool.name} Online - Free & Secure | PDF Tools Hub`;
+  document.querySelector('[data-seo-title]').textContent = document.title;
+  document.querySelector('[data-seo-description]').setAttribute('content', tool.description);
+  document.querySelector('[data-breadcrumb-category]').textContent = cat.name;
+  document.querySelector('[data-breadcrumb-tool]').textContent = tool.name;
+  document.querySelector('[data-tool-title]').textContent = tool.name;
+  document.querySelector('[data-tool-description]').textContent = tool.description;
+  const iconEl = document.querySelector('[data-tool-icon]');
+  iconEl.style.background = cat.color;
+  iconEl.innerHTML = `<i class="fa-solid ${tool.icon}"></i>`;
+  document.querySelector('[data-process-label]').textContent = tool.name;
+
+  if (tool.todo) {
+    document.querySelector('[data-upload-state]').innerHTML = `
+      <div class="empty-state">
+        <div class="icon"><i class="fa-solid fa-hammer"></i></div>
+        <h3>This tool is coming soon</h3>
+        <p>We're still building this one. Check back shortly, or explore the tools that are live today.</p>
+        <a class="btn btn-primary" style="margin-top:16px" href="index.html">Browse available tools</a>
+      </div>`;
+    return;
+  }
+
+  // ---- Upload widget wiring ----
+  const dropzone = document.querySelector('[data-dropzone]');
+  const fileInput = document.querySelector('[data-file-input]');
+  const fileListEl = document.querySelector('[data-file-list]');
+  const processBtn = document.querySelector('[data-process-btn]');
+  const progressBar = document.querySelector('[data-progress-bar]');
+  const progressFill = document.querySelector('[data-progress-fill]');
+  const uploadState = document.querySelector('[data-upload-state]');
+  const resultPanel = document.querySelector('[data-result-panel]');
+  const downloadBtn = document.querySelector('[data-download-btn]');
+  const resetBtn = document.querySelector('[data-reset-btn]');
+
+  // Multi-file tools (merge) allow >1 file; most tools take exactly one.
+  const multiFileTools = ['merge-pdf', 'jpg-to-pdf', 'png-to-pdf', 'images-to-pdf', 'webp-to-pdf'];
+  const widget = window.PTH.upload.createUploadWidget({
+    dropzone, fileInput, fileListEl,
+    multiple: multiFileTools.includes(tool.slug),
+    acceptedExtensions: ['.pdf'],
+    onChange: (files) => {
+      processBtn.disabled = files.length === 0 || (multiFileTools.includes(tool.slug) && files.length < 2);
+    },
+  });
+
+  // ---- Per-tool option panels (rotate angle / crop margins / split mode) ----
+  const optionsEl = document.querySelector('[data-tool-options]');
+  function renderOptions() {
+    if (tool.slug === 'rotate-pdf') {
+      optionsEl.innerHTML = `
+        <div class="form-group" style="max-width:220px;">
+          <label for="opt-angle">Rotation angle</label>
+          <select id="opt-angle" data-opt="angle">
+            <option value="90">90° clockwise</option>
+            <option value="180">180°</option>
+            <option value="270">270° clockwise</option>
+          </select>
+        </div>`;
+    } else if (tool.slug === 'crop-pdf') {
+      optionsEl.innerHTML = `
+        <p style="font-size:13px;margin-bottom:10px;">Trim margins from each edge, in points (72pt = 1 inch).</p>
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;max-width:480px;">
+          ${['top', 'bottom', 'left', 'right'].map((side) => `
+            <div class="form-group" style="margin-bottom:0;">
+              <label for="opt-${side}" style="text-transform:capitalize;">${side}</label>
+              <input type="number" id="opt-${side}" data-opt="${side}" value="0" min="0" step="1">
+            </div>`).join('')}
+        </div>`;
+    } else if (tool.slug === 'split-pdf') {
+      optionsEl.innerHTML = `
+        <div class="form-group">
+          <label for="opt-ranges">Custom page ranges (optional)</label>
+          <input type="text" id="opt-ranges" data-opt="ranges" placeholder="e.g. 1-2;3-5 — leave blank to split every page separately">
+        </div>`;
+    } else {
+      optionsEl.innerHTML = '';
+    }
+  }
+  renderOptions();
+
+  function collectOptions(formData) {
+    optionsEl.querySelectorAll('[data-opt]').forEach((el) => {
+      if (el.value !== '') formData.append(el.dataset.opt, el.value);
+    });
+  }
+
+  processBtn.addEventListener('click', async () => {
+    const files = widget.getFiles();
+    if (!files.length) return;
+
+    processBtn.disabled = true;
+    processBtn.innerHTML = `<span class="spinner"></span> Processing…`;
+    progressBar.classList.add('active');
+
+    const formData = new FormData();
+    files.forEach((f) => formData.append('files', f));
+    collectOptions(formData);
+
+    try {
+      // TODO: this endpoint goes live once the FastAPI backend (Stage 5/6) is running.
+      const result = await window.PTH.api.processPdf(tool.slug, formData, (pct) => {
+        progressFill.style.width = `${pct}%`;
+      });
+      const url = URL.createObjectURL(result.blob);
+      downloadBtn.href = url;
+      downloadBtn.setAttribute('download', result.filename);
+      uploadState.style.display = 'none';
+      resultPanel.classList.add('active');
+      window.PTH.toast('File processed successfully.', 'success');
+    } catch (err) {
+      window.PTH.toast(err.message || 'Something went wrong. Please try again.', 'error');
+      processBtn.disabled = false;
+      processBtn.innerHTML = `<i class="fa-solid fa-gears"></i> <span data-process-label>${tool.name}</span>`;
+      progressBar.classList.remove('active');
+    }
+  });
+
+  resetBtn.addEventListener('click', () => {
+    widget.clear();
+    uploadState.style.display = '';
+    resultPanel.classList.remove('active');
+    progressBar.classList.remove('active');
+    progressFill.style.width = '0%';
+    processBtn.disabled = true;
+    processBtn.innerHTML = `<i class="fa-solid fa-gears"></i> <span data-process-label>${tool.name}</span>`;
+  });
+});
+</script>
+</body>
+</html>

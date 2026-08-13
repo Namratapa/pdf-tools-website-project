@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">c
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PDF Tools Hub — All-in-One Free Online PDF Tools</title>
+<meta name="description" content="Merge, split, convert, compress, and edit PDF files online for free. Fast, simple, and secure PDF tools with no installation required.">
+<meta name="keywords" content="pdf tools, merge pdf, split pdf, pdf converter, compress pdf, edit pdf online">
+<link rel="canonical" href="https://www.pdftoolshub.example/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="PDF Tools Hub — All-in-One Free Online PDF Tools">
+<meta property="og:description" content="Fast, simple & secure online PDF tools — merge, split, convert, compress, and edit PDFs for free.">
+<meta property="og:url" content="https://www.pdftoolshub.example/">
+<link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/vendor/fontawesome/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to content</a>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="brand" aria-label="PDF Tools Hub home">
+      <span class="brand-mark">P</span>
+      <span class="brand-text">
+        <span class="brand-name">PDF Tools Hub</span>
+        <span class="brand-tagline">All-in-One PDF Tools</span>
+      </span>
+    </a>
+
+    <nav class="main-nav" aria-label="Primary">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="tool.html?tool=crop-pdf">Crop PDF</a></li>
+        <li><a href="tool.html?tool=merge-pdf">Merge PDF</a></li>
+        <li><a href="blogs.html">Blogs</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <a class="icon-btn" href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      <a class="icon-btn" href="https://wa.me/" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+      <a class="icon-btn" href="https://t.me/" target="_blank" rel="noopener" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
+      <button class="icon-btn theme-toggle" data-theme-toggle aria-label="Toggle dark mode">
+        <i class="fa-solid fa-moon icon-moon"></i>
+        <i class="fa-solid fa-sun icon-sun"></i>
+      </button>
+      <select class="lang-select" data-lang-select aria-label="Select language">
+        <option value="en">🇬🇧 EN</option>
+        <option value="hi">🇮🇳 HI</option>
+        <option value="mr">🇮🇳 MR</option>
+      </select>
+      <button class="hamburger" data-mobile-nav-open aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile nav drawer -->
+<div class="mobile-nav" data-mobile-nav aria-hidden="true">
+  <div class="mobile-nav-panel">
+    <button class="mobile-nav-close" data-mobile-nav-close aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
+    <div style="display:flex;align-items:center;gap:10px;margin:6px 0 18px;">
+      <button class="icon-btn theme-toggle" data-theme-toggle aria-label="Toggle dark mode"><i class="fa-solid fa-moon icon-moon"></i><i class="fa-solid fa-sun icon-sun"></i></button>
+      <select class="lang-select" data-lang-select aria-label="Select language"><option value="en">EN</option><option value="hi">HI</option><option value="mr">MR</option></select>
+    </div>
+    <nav aria-label="Mobile primary">
+      <a href="index.html">Home</a>
+      <a href="tool.html?tool=crop-pdf">Crop PDF</a>
+      <a href="tool.html?tool=merge-pdf">Merge PDF</a>
+      <a href="blogs.html">Blogs</a>
+      <a href="contact.html">Contact Us</a>
+    </nav>
+  </div>
+</div>
+
+<main id="main">
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <span class="hero-eyebrow"><i class="fa-solid fa-bolt"></i> 50+ PDF tools, 100% free</span>
+    <h1>All-in-One PDF Tools</h1>
+    <p class="hero-subtitle">Fast, Simple &amp; Secure Online PDF Tools</p>
+
+    <div class="hero-search">
+      <i class="fa-solid fa-magnifying-glass search-icon"></i>
+      <input type="text" data-search-input placeholder="Search tools by name, category, or description..." aria-label="Search tools">
+      <div class="search-results" data-search-results role="listbox"></div>
+    </div>
+
+    <a href="#tools" class="hero-cta"><i class="fa-solid fa-table-cells-large"></i> Explore All Tools <i class="fa-solid fa-arrow-down"></i></a>
+  </section>
+
+  <!-- ============ CATEGORIES ============ -->
+  <section class="section" id="tools">
+    <div class="container">
+      <h2 class="section-title"><i class="fa-solid fa-border-all icon"></i> Browse by Category</h2>
+      <div class="category-list" data-category-pills></div>
+
+      <!-- ============ TOOLS GRID ============ -->
+      <div data-tools-grid></div>
+    </div>
+  </section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="brand">
+          <span class="brand-mark">P</span>
+          <span class="brand-text">
+            <span class="brand-name" style="color:#fff">PDF Tools Hub</span>
+          </span>
+        </a>
+        <p>Free, fast, and secure online PDF tools — no installation, no signup required.</p>
+        <div class="footer-social">
+          <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://wa.me/" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="https://t.me/" target="_blank" rel="noopener" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>PDF Tools</h4>
+        <ul>
+          <li><a href="tool.html?tool=merge-pdf">Merge PDF</a></li>
+          <li><a href="tool.html?tool=split-pdf">Split PDF</a></li>
+          <li><a href="tool.html?tool=crop-pdf">Crop PDF</a></li>
+          <li><a href="tool.html?tool=pdf-to-word">PDF to Word</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="blogs.html">Blogs</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms &amp; Conditions</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 PDF Tools Hub. All rights reserved.</div>
+  </div>
+</footer>
+
+<script src="js/theme.js"></script>
+<script src="js/api.js"></script>
+<script src="js/tools.js"></script>
+<script src="js/search.js"></script>
+<script src="js/main.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    window.PTH.tools.renderCategoryPills(document.querySelector('[data-category-pills]'));
+    window.PTH.tools.renderToolsGrid(document.querySelector('[data-tools-grid]'));
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us — PDF Tools Hub</title>
+<meta name="description" content="Get in touch with the PDF Tools Hub team for support, feedback, or partnership inquiries.">
+<link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/vendor/fontawesome/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to content</a>
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="brand"><span class="brand-mark">P</span><span class="brand-text"><span class="brand-name">PDF Tools Hub</span><span class="brand-tagline">All-in-One PDF Tools</span></span></a>
+    <nav class="main-nav" aria-label="Primary"><ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="tool.html?tool=crop-pdf">Crop PDF</a></li>
+      <li><a href="tool.html?tool=merge-pdf">Merge PDF</a></li>
+      <li><a href="blogs.html">Blogs</a></li>
+      <li><a href="contact.html" class="active">Contact Us</a></li>
+    </ul></nav>
+    <div class="header-actions">
+      <button class="icon-btn theme-toggle" data-theme-toggle aria-label="Toggle dark mode"><i class="fa-solid fa-moon icon-moon"></i><i class="fa-solid fa-sun icon-sun"></i></button>
+      <select class="lang-select" data-lang-select aria-label="Select language"><option value="en">🇬🇧 EN</option><option value="hi">🇮🇳 HI</option><option value="mr">🇮🇳 MR</option></select>
+      <button class="hamburger" data-mobile-nav-open aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="mobile-nav" data-mobile-nav aria-hidden="true">
+  <div class="mobile-nav-panel">
+    <button class="mobile-nav-close" data-mobile-nav-close aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
+    <div style="display:flex;align-items:center;gap:10px;margin:6px 0 18px;">
+      <button class="icon-btn theme-toggle" data-theme-toggle aria-label="Toggle dark mode"><i class="fa-solid fa-moon icon-moon"></i><i class="fa-solid fa-sun icon-sun"></i></button>
+      <select class="lang-select" data-lang-select aria-label="Select language"><option value="en">EN</option><option value="hi">HI</option><option value="mr">MR</option></select>
+    </div>
+    <nav aria-label="Mobile primary"><a href="index.html">Home</a><a href="tool.html?tool=crop-pdf">Crop PDF</a><a href="tool.html?tool=merge-pdf">Merge PDF</a><a href="blogs.html">Blogs</a><a href="contact.html">Contact Us</a></nav>
+  </div>
+</div>
+
+<main id="main">
+  <section class="section">
+    <div class="container" style="max-width:560px;">
+      <h1 class="section-title"><i class="fa-solid fa-envelope icon"></i> Contact Us</h1>
+      <p class="text-center" style="margin-bottom:28px;">Questions, feedback, or found a bug? Send us a message and we'll get back to you.</p>
+
+      <form data-contact-form novalidate>
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+          <div class="form-error">Please enter your name.</div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+          <div class="form-error">Please enter a valid email address.</div>
+        </div>
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" name="subject" required>
+          <div class="form-error">Please enter a subject.</div>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+          <div class="form-error">Please enter a message.</div>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%;" data-submit-btn>
+          <i class="fa-solid fa-paper-plane"></i> Send Message
+        </button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer"><div class="container"><div class="footer-bottom">© 2026 PDF Tools Hub. All rights reserved.</div></div></footer>
+
+<script src="js/theme.js"></script>
+<script src="js/api.js"></script>
+<script src="js/main.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.querySelector('[data-contact-form]');
+  const submitBtn = document.querySelector('[data-submit-btn]');
+
+  function validate() {
+    let valid = true;
+    const fields = [
+      { el: form.name, test: (v) => v.trim().length > 1 },
+      { el: form.email, test: (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v) },
+      { el: form.subject, test: (v) => v.trim().length > 2 },
+      { el: form.message, test: (v) => v.trim().length > 5 },
+    ];
+    fields.forEach(({ el, test }) => {
+      const group = el.closest('.form-group');
+      const ok = test(el.value);
+      group.classList.toggle('invalid', !ok);
+      if (!ok) valid = false;
+    });
+    return valid;
+  }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (!validate()) return;
+
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = `<span class="spinner"></span> Sending…`;
+
+    try {
+      // TODO: goes live once the FastAPI /api/contact + Supabase table exist (Stage 8).
+      await window.PTH.api.sendContactMessage({
+        name: form.name.value.trim(),
+        email: form.email.value.trim(),
+        subject: form.subject.value.trim(),
+        message: form.message.value.trim(),
+      });
+      window.PTH.toast('Your message has been sent successfully.', 'success');
+      form.reset();
+    } catch (err) {
+      window.PTH.toast(err.message || 'Could not send your message. Please try again.', 'error');
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = `<i class="fa-solid fa-paper-plane"></i> Send Message`;
+    }
+  });
+});
+</script>
+</body>
+</html>

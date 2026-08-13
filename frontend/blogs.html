@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog — PDF Tools Hub</title>
+<meta name="description" content="Tips, guides and updates on working with PDF files — from PDF Tools Hub.">
+<link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/vendor/fontawesome/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to content</a>
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="brand"><span class="brand-mark">P</span><span class="brand-text"><span class="brand-name">PDF Tools Hub</span><span class="brand-tagline">All-in-One PDF Tools</span></span></a>
+    <nav class="main-nav" aria-label="Primary"><ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="tool.html?tool=crop-pdf">Crop PDF</a></li>
+      <li><a href="tool.html?tool=merge-pdf">Merge PDF</a></li>
+      <li><a href="blogs.html" class="active">Blogs</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul></nav>
+    <div class="header-actions">
+      <button class="icon-btn theme-toggle" data-theme-toggle aria-label="Toggle dark mode"><i class="fa-solid fa-moon icon-moon"></i><i class="fa-solid fa-sun icon-sun"></i></button>
+      <select class="lang-select" data-lang-select aria-label="Select language"><option value="en">🇬🇧 EN</option><option value="hi">🇮🇳 HI</option><option value="mr">🇮🇳 MR</option></select>
+      <button class="hamburger" data-mobile-nav-open aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="mobile-nav" data-mobile-nav aria-hidden="true">
+  <div class="mobile-nav-panel">
+    <button class="mobile-nav-close" data-mobile-nav-close aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
+    <div style="display:flex;align-items:center;gap:10px;margin:6px 0 18px;">
+      <button class="icon-btn theme-toggle" data-theme-toggle aria-label="Toggle dark mode"><i class="fa-solid fa-moon icon-moon"></i><i class="fa-solid fa-sun icon-sun"></i></button>
+      <select class="lang-select" data-lang-select aria-label="Select language"><option value="en">EN</option><option value="hi">HI</option><option value="mr">MR</option></select>
+    </div>
+    <nav aria-label="Mobile primary"><a href="index.html">Home</a><a href="tool.html?tool=crop-pdf">Crop PDF</a><a href="tool.html?tool=merge-pdf">Merge PDF</a><a href="blogs.html">Blogs</a><a href="contact.html">Contact Us</a></nav>
+  </div>
+</div>
+
+<main id="main">
+  <section class="section">
+    <div class="container">
+      <h1 class="section-title"><i class="fa-solid fa-newspaper icon"></i> From the Blog</h1>
+      <div class="blog-grid" data-blog-grid>
+        <!-- TODO: replace with data fetched from GET /api/blogs once Stage 8 (Supabase) is connected -->
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer"><div class="container"><div class="footer-bottom">© 2026 PDF Tools Hub. All rights reserved.</div></div></footer>
+
+<script src="js/theme.js"></script>
+<script src="js/api.js"></script>
+<script src="js/main.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // Placeholder posts until Stage 8 connects real Supabase-backed blogs.
+  const placeholderPosts = [
+    { title: 'How to Merge PDF Files Without Losing Quality', tag: 'Guides', excerpt: 'A quick walkthrough of combining multiple PDFs into one clean document.', date: 'Aug 2026' },
+    { title: '5 Ways to Shrink a PDF Before Emailing It', tag: 'Tips', excerpt: 'Practical techniques to reduce file size while keeping text sharp.', date: 'Jul 2026' },
+    { title: 'PDF vs Word: When to Use Which Format', tag: 'Guides', excerpt: 'Understand the trade-offs so you pick the right format every time.', date: 'Jul 2026' },
+  ];
+  document.querySelector('[data-blog-grid]').innerHTML = placeholderPosts.map((p) => `
+    <article class="blog-card">
+      <div style="height:170px;background:linear-gradient(135deg, var(--color-accent), var(--color-navy-800));display:flex;align-items:center;justify-content:center;color:#fff;font-size:28px;">
+        <i class="fa-solid fa-file-pdf"></i>
+      </div>
+      <div class="blog-card-body">
+        <span class="blog-tag">${p.tag}</span>
+        <h3>${p.title}</h3>
+        <p>${p.excerpt}</p>
+        <div class="blog-meta">${p.date}</div>
+        <a href="#" class="tool-link" style="margin-top:12px;display:inline-flex;">Read More <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </article>
+  `).join('');
+});
+</script>
+</body>
+</html>

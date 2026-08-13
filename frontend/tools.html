@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>All PDF Tools — PDF Tools Hub</title>
+<meta name="description" content="Browse every free PDF tool: convert, merge, split, compress, edit, sign and secure your PDF files online.">
+<link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/vendor/fontawesome/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to content</a>
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="brand"><span class="brand-mark">P</span><span class="brand-text"><span class="brand-name">PDF Tools Hub</span><span class="brand-tagline">All-in-One PDF Tools</span></span></a>
+    <nav class="main-nav" aria-label="Primary"><ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="tool.html?tool=crop-pdf">Crop PDF</a></li>
+      <li><a href="tool.html?tool=merge-pdf">Merge PDF</a></li>
+      <li><a href="blogs.html">Blogs</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul></nav>
+    <div class="header-actions">
+      <a class="icon-btn" href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      <a class="icon-btn" href="https://wa.me/" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+      <a class="icon-btn" href="https://t.me/" target="_blank" rel="noopener" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
+      <button class="icon-btn theme-toggle" data-theme-toggle aria-label="Toggle dark mode"><i class="fa-solid fa-moon icon-moon"></i><i class="fa-solid fa-sun icon-sun"></i></button>
+      <select class="lang-select" data-lang-select aria-label="Select language"><option value="en">🇬🇧 EN</option><option value="hi">🇮🇳 HI</option><option value="mr">🇮🇳 MR</option></select>
+      <button class="hamburger" data-mobile-nav-open aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="mobile-nav" data-mobile-nav aria-hidden="true">
+  <div class="mobile-nav-panel">
+    <button class="mobile-nav-close" data-mobile-nav-close aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
+    <div style="display:flex;align-items:center;gap:10px;margin:6px 0 18px;">
+      <button class="icon-btn theme-toggle" data-theme-toggle aria-label="Toggle dark mode"><i class="fa-solid fa-moon icon-moon"></i><i class="fa-solid fa-sun icon-sun"></i></button>
+      <select class="lang-select" data-lang-select aria-label="Select language"><option value="en">EN</option><option value="hi">HI</option><option value="mr">MR</option></select>
+    </div>
+    <nav aria-label="Mobile primary">
+      <a href="index.html">Home</a><a href="tool.html?tool=crop-pdf">Crop PDF</a><a href="tool.html?tool=merge-pdf">Merge PDF</a><a href="blogs.html">Blogs</a><a href="contact.html">Contact Us</a>
+    </nav>
+  </div>
+</div>
+
+<main id="main">
+  <section class="section">
+    <div class="container">
+      <h1 class="section-title"><i class="fa-solid fa-table-cells-large icon"></i> All PDF Tools</h1>
+      <div class="hero-search" style="max-width:560px; margin-bottom:36px;">
+        <i class="fa-solid fa-magnifying-glass search-icon" style="color:var(--color-text-muted)"></i>
+        <input type="text" data-search-input placeholder="Search tools by name, category, or description..." aria-label="Search tools" style="box-shadow:var(--shadow-sm); border:1px solid var(--color-border);">
+        <div class="search-results" data-search-results role="listbox"></div>
+      </div>
+      <div class="category-list" data-category-pills></div>
+      <div data-tools-grid></div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer"><div class="container"><div class="footer-bottom">© 2026 PDF Tools Hub. All rights reserved.</div></div></footer>
+
+<script src="js/theme.js"></script>
+<script src="js/api.js"></script>
+<script src="js/tools.js"></script>
+<script src="js/search.js"></script>
+<script src="js/main.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  window.PTH.tools.renderCategoryPills(document.querySelector('[data-category-pills]'));
+  window.PTH.tools.renderToolsGrid(document.querySelector('[data-tools-grid]'));
+});
+</script>
+</body>
+</html>
