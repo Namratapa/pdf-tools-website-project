@@ -26,12 +26,6 @@ pdf-tools-website/
 └── requirements.txt
 ```
 
-## Future Improvements
-
-- PDF compression
-- PDF splitting
-- PDF to image conversion
-- PDF to Word conversion
 
 ## Author
 
